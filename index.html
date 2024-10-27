@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>001家庭</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, viewport-fit=cover"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="mobile-web-app-capable" content="yes"/>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <meta name="keywords" content="豆绘AI, VR全景合成, 全景制作软件, 全景在线制作, 虚拟现实设计工具, 豆绘VR全景, 豆绘全景, 都会全景"/>
+    <meta name="description" content="豆绘AI的'VR全景合成'功能为设计师提供了一种快速，直观的在线全景制作工具。帮助设计师创作沉浸式虚拟现实体验，有效地宣传和展示设计作品，有效地吸引客户，助力签单。"/>
+    <link href="assets/layui/css/layui.css" rel="stylesheet">
+    <link href="assets/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/glightbox/glightbox.min.css" rel="stylesheet">
+    <link href="assets/visit.css" rel="stylesheet">
+    <script src="assets/jquery.min.js"></script>
+</head>
+<body>
+
+<script src="tour.js"></script>
+<audio id="autoHotspotAudio" style="display: none;"></audio>
+<div id="panoCompare" style="width:100%;height:100%;display: none;"></div>
+<div id="pano" style="width:100%;height:100%;">
+    <noscript>
+        <table style="width:100%;height:100%;">
+            <tr style="vertical-align:middle;">
+                <td>
+                    <div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div>
+                </td>
+            </tr>
+        </table>
+    </noscript>
+    <script>
+        var krpano = null;
+        var krpanoCompare = null;
+        var groupMode = 0;
+        var visitId = "ybadf8sfe3eja1";
+        /**场景列表**/
+        var visitItemSceneList = [{"groupname":"\u9ed8\u8ba4\u5206\u7ec4","groupid":0,"list":[{"id":621327,"name":"0D7A81422 \u5168\u666f.jpg","groupid":0,"compare_sceneid":0,"compare_position":null,"compare_screen":null,"thumb":"panos\/76_0007535098684.tiles\/thumb.jpg"},{"id":621326,"name":"0D7A81422 \u5168\u666f","groupid":0,"compare_sceneid":0,"compare_position":null,"compare_screen":null,"thumb":"panos\/76_0007535098684.tiles\/thumb.jpg"}]}];
+        var scene2group = {"621327":0,"621326":0};
+        var hotspotlistpics = {"335907":["files\/preview\/20241027\/76_001416_1002440.jpg"]};
+        var hotspotlistvideo = {"335905":["files\/video\/20241027\/76_001139_5892464.mp4"],"335907":["files\/video\/20241027\/76_001416_1002440.mp4"]};
+        var hotspotlistShop = {"335906":"{\"name\":\"\\u9a71\\u868a\\u5668\",\"intro\":\"\\u9a71\\u868a\\u5668\",\"thumb\":\"files\\\/shop\\\/202410\\\/76_0012253778905.jpg\",\"price\":\"122\",\"unit\":\"1\",\"link\":\"https:\\\/\\\/jl.mzgtuan.com\\\/project\\\/81197\\\/\"}"};
+        var hotspotlistImg2Text = [];
+        var visitXml = "tour.xml";
+        var visitVersion = "2693";
+        var groupModeFirstId = "0";
+        var isFirstSceneCompareMode = "0";
+        var panoSceneNums = "2";
+        var panoFirstCompareInfo = {
+            id: "621327"
+        };
+        var clickSceneThumbTmp = [];
+        var specialJson = [];
+        var sceneListShow = 2;
+        var startScene = 0;
+        embedpano({xml: visitXml, target: "pano", onready: function (k) {krpano = k;}});
+    </script>
+</div>
+<!--场景列表 start-->
+<div class="itemPreviewContainer">
+        <div class="itemPreview">
+            <div class="itemSwiper">
+                <div class="swiper-wrapper"></div>
+            </div>
+        </div>
+    </div>
+<script type="text/html" id="itemSlideTpl">
+    {{each list item index }}
+    <div class="swiper-slide swiper-slide{{item.id}}" data-id="{{item.id}}" data-compare="{{item.compare_sceneid}}" data-position="{{item.compare_position}}" data-screen="{{item.compare_screen}}">
+        <div class="swiper-box" style='background-image: url("{{item.thumb}}");'>
+            <img src="skin/img/readthumb.png" style="display: none">
+            <div><span>{{item.name}}</span></div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<!--场景列表 end-->
+
+<!--分组 start-->
+<!--分组 end-->
+
+<!--左上角 start-->
+<div class="iconLeftTop">
+    <div class="top">
+        <div class="left">
+                <img src="files/logo/202410/76_0010114666654.jpg"/>
+            </div>        <div class="right">
+                    </div>
+    </div>
+    <div class="bottom">
+            <img src="files/water/202410/76_0010384605110.png">
+        </div></div>
+<!--左上角 end-->
+
+<!--左下侧icon start-->
+<div class="iconBottomLeft">
+        <div class="scene"><img src="skin/img/scene.png"><span>场景选择</span></div>
+    </div><!--左下侧icon end-->
+
+<!--右下侧icon start-->
+<div class="iconBottomRight">
+        <div class="contacts"><img src="skin/img/phone.png"><span>联系方式</span></div>    <div class="infos"><img src="skin/img/info.png"><span>作品简介</span></div></div>
+<!--右下侧icon end-->
+
+<!--作品简介-->
+<div class="infosContainer" style="display: none">
+    森森</div>
+
+<!--联系方式-->
+<div class="contactsContainer" style="display: none">
+        <div class="container">
+            <div class="list">
+                    <p>发扥</p>
+                    <p>17671728821</p>
+                        <a href="tel:17671728821" title="拨打"><i class="layui-icon layui-icon-cellphone-fine"></i></a>                </div>            <div class="list">
+                    <p>微信号</p>
+                    <p>17671728821</p>
+                    <a href="javascript:void(0);" class="clipboard" data-clipboard-text="17671728821" title="复制"><i class="layui-icon layui-icon layui-icon-file-b"></i></a>
+                </div>            <div class="list linkqr">
+                    <img src="files/qr/202410/76_0015548514353.jpg">
+                    <p>扫码或长按识别</p>
+                </div>        </div>
+    </div>
+<!--右侧icon start-->
+<div class="iconRight">
+    <div class="fullscreen" onclick="jsfullScreen();"><img src="skin/img/fullscreen.png"></div>
+    <div class="music" onclick="krpano.call('togglesound(bgsnd);');"><img src="skin/img/music-close.png"></div>    <div class="vr" onclick="krpano.call('webvr.enterVR();');" style="display: none"><img src="skin/img/vr.png"></div>
+        <div class="gyro" onclick="switchGyro(this)" style="opacity:0.5;display: none"><img src="skin/img/gyro.png"></div>    <div class="clearScreen"><img src="skin/img/clear.png"></div>    <div class="viewswitching"><img src="skin/img/view.png"></div>    <div class="openCompare"><img src="skin/img/compare.png"></div>
+</div>
+<!--右侧icon end-->
+
+<div class="viewswitchingContainer" style="display: none">
+    <div class="active">
+        <img src="skin/img/normal.png">
+        <p>正常视角</p>
+    </div>
+    <div>
+        <img src="skin/img/littleplanet.png">
+        <p>小行星</p>
+    </div>
+    <div>
+        <img src="skin/img/fisheye.png">
+        <p>鱼眼</p>
+    </div>
+</div>
+
+<!--顶部广告 start-->
+<div class="marqueeTop" style="display: none">
+        <div class="marqueeContent">
+            赛更登封扥改凤        </div>
+    </div><!--顶部广告 end-->
+
+<!--图片热点数据-->
+<div class="hotspotlistpics" style="display: none"></div>
+<script type="text/html" id="glightBoxPicTpl">
+    {{each list item index}}
+    <a href="{{ item }}" class="glightboxpic" data-zoomable="true">
+        <img src="{{ item }}" alt="image"/>
+    </a>
+    {{/each}}
+</script>
+<!--图文热点数据-->
+<div class="hotspotlistimgs2text" style="display: none;"></div>
+<script type="text/html" id="glightBoxImgs2TextTpl">
+    {{each list item index}}
+    <a href="{{ item }}" class="glightboximgs2text" data-title="{{title}} <em style='color:#999;margin-left:5px;'>({{index+1}}/{{num}})</em>" data-description="{{desc}}" data-zoomable="true"></a>
+    {{/each}}
+</script>
+<!--视频热点数据-->
+<div class="hotspotlistvideo" style="display: none"></div>
+<script type="text/html" id="glightBoxVideoTpl">
+    {{each list item index}}
+    <a href="{{ item }}" class="glightboxvideo">
+        <img src="{{ item }}" alt="image"/>
+    </a>
+    {{/each}}
+</script>
+<!--手势提示 start-->
+<div class="gestureTips" style="display: none"><div></div></div>
+<!--手势提示 end-->
+
+<!--退出对比start-->
+<div class="exitCompare"><div>退出对比</div></div>
+<!--退出对比end-->
+
+<!--退出清屏start-->
+<div class="exitClearScreen" id="itemPreviewContainer"><div>退出清屏</div></div>
+<!--退出清屏end-->
+
+<!--热点编辑 商品热点 弹窗 html模板 start-->
+<script type="text/html" id="edit-item-info-hotspot-shop-container-tpl">
+    <div class="shop-container p-4">
+        {{each list item index }}
+        <div class="left"><img src="{{item.thumb}}"></div>
+        <div class="right">
+            <div class="title">{{item.name}}</div>
+            <div class="mt-2 text-800 intro">{{item.intro}}</div>
+            <div class="right-bottom {{item.clas}}">
+                <div class="my-2">
+                    <label class="fs-2 text-danger">￥</label>
+                    <span class="fs-1 text-danger">{{item.price}}</span>
+                    <span class="ms-2">{{item.unit}}</span>
+                </div>
+                {{ if(item.link !='') }}<a href="{{item.link}}" target="_blank" class="gopay bg-danger">立即购买</a>{{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</script>
+<!--热点编辑 商品热点 弹窗 html模板 end-->
+
+<script src="assets/swiper/swiper-bundle.min.js"></script>
+<script src="assets/jquery.liMarquee.js"></script>
+<script src="assets/qrcode.min.js"></script>
+<script src="assets/clipboard.min.js"></script>
+<script src="assets/template-web.js"></script>
+<script src="assets/glightbox/glightbox.min.js"></script>
+<script src="assets/layui/layui.js"></script>
+<script src="assets/dhvr_visit.js"></script>
+</body>
+</html>
